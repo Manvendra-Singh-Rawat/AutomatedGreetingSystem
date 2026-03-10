@@ -57,6 +57,8 @@ namespace AutomatedGreetingSystem.Application.Services
                     email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = $"testing email for event {events.EventName}" };
                     smtp.Send(email);
                 }
+
+                Console.WriteLine($"Mail sent to: {contact.Name} \nMail: {contact.Email}");
             }
 
             await smtp.DisconnectAsync(true);

@@ -1,0 +1,93 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Projects\\AutomatedGreetingSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|e:\\projects\\automatedgreetingsystem\\infrastructure\\backgroundservices\\greetingbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|solutionrelative:infrastructure\\backgroundservices\\greetingbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|e:\\projects\\automatedgreetingsystem\\application\\services\\greetingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|solutionrelative:application\\services\\greetingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|e:\\projects\\automatedgreetingsystem\\controllers\\testservicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|solutionrelative:controllers\\testservicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1322,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GreetingService.cs",
+              "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Services\\GreetingService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\GreetingService.cs",
+              "ToolTip": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Services\\GreetingService.cs",
+              "RelativeToolTip": "Application\\Services\\GreetingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T09:50:52.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GreetingBackgroundService.cs",
+              "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Infrastructure\\BackgroundServices\\GreetingBackgroundService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\BackgroundServices\\GreetingBackgroundService.cs",
+              "ToolTip": "E:\\Projects\\AutomatedGreetingSystem\\Infrastructure\\BackgroundServices\\GreetingBackgroundService.cs",
+              "RelativeToolTip": "Infrastructure\\BackgroundServices\\GreetingBackgroundService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T09:49:45.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TestServiceController.cs",
+              "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Controllers\\TestServiceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TestServiceController.cs",
+              "ToolTip": "E:\\Projects\\AutomatedGreetingSystem\\Controllers\\TestServiceController.cs",
+              "RelativeToolTip": "Controllers\\TestServiceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T09:49:23.372Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 448,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

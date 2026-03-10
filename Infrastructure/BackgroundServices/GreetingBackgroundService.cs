@@ -17,7 +17,7 @@ namespace AutomatedGreetingSystem.Infrastructure.GreetingService
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation("Checking for greetings...");
+                Console.WriteLine("Checking for greetings...");
 
                 using (var scope = _scopeFactory.CreateScope())
                 {
