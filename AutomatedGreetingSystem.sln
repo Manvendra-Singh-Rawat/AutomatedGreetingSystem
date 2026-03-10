@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatedGreetingSystem", "AutomatedGreetingSystem.csproj", "{E44D35C9-A293-4A73-B780-6B6655FE5547}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E44D35C9-A293-4A73-B780-6B6655FE5547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44D35C9-A293-4A73-B780-6B6655FE5547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44D35C9-A293-4A73-B780-6B6655FE5547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44D35C9-A293-4A73-B780-6B6655FE5547}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6873E114-BC36-495B-B484-E40C9385C5D5}
+	EndGlobalSection
+EndGlobal
