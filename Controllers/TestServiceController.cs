@@ -23,9 +23,14 @@ namespace AutomatedGreetingSystem.Controllers
                 return StatusCode(500);
             }
 
-            await _greetingService.CheckAndSendGreet();
+            var list = await _greetingService.CheckAndSendGreet();
 
-            return Ok();
+            if(list == null || true)
+            {
+                return NoContent();
+            }
+
+            return Ok(list);
         }
     }
 }

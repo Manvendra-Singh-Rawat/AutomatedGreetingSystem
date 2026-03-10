@@ -1,4 +1,5 @@
-﻿using AutomatedGreetingSystem.Application.Interfaces;
+﻿using AutomatedGreetingSystem.Application.DTO;
+using AutomatedGreetingSystem.Application.Interfaces;
 using AutomatedGreetingSystem.Domain.Entity;
 using MailKit.Net.Smtp;
 using MailKit.Security;
@@ -17,7 +18,7 @@ namespace AutomatedGreetingSystem.Application.Services
             _eventRepo = eventRepo;
         }
 
-        public async Task CheckAndSendGreet()
+        public async Task<List<EndPointCheckerDTO>> CheckAndSendGreet()
         {
             var today = DateOnly.FromDateTime(DateTime.UtcNow);
             Console.WriteLine($"Todays date: {today}");
@@ -26,24 +27,28 @@ namespace AutomatedGreetingSystem.Application.Services
             if (todayEvents.Count <= 0)
             {
                 Console.WriteLine($"No events on for the day");
-                return;
+                return null;
             }
 
             var contactsList = await _contactRepo.GetAllContacts();
             if (contactsList.Count <= 0)
             {
                 Console.WriteLine("Contacts list is empty");
-                return;
+                return null;
             }
 
-            await SendMails(contactsList, todayEvents);
+            var sentList = await SendMails(contactsList, todayEvents);
+
+            return sentList;
         }
 
-        private async Task SendMails(List<Contacts> contactsList, List<Events> eventsList)
+        private async Task<List<EndPointCheckerDTO>> SendMails(List<Contacts> contactsList, List<Events> eventsList)
         {
             using var smtp = new SmtpClient();
             await smtp.ConnectAsync("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
             await smtp.AuthenticateAsync("amanda37@ethereal.email", "XM8Bq9FAtPNqP76rPm");
+
+            List<EndPointCheckerDTO> sentList = new List<EndPointCheckerDTO>();
 
             foreach ( var contact in contactsList)
             {
@@ -59,9 +64,11 @@ namespace AutomatedGreetingSystem.Application.Services
                 }
 
                 Console.WriteLine($"Mail sent to: {contact.Name} \nMail: {contact.Email}");
+                sentList.Add(new EndPointCheckerDTO() { name = contact.Name, email = contact.Email });
             }
 
             await smtp.DisconnectAsync(true);
+            return sentList;
         }
     }
 }

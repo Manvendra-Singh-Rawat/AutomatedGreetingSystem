@@ -1,7 +1,9 @@
-﻿namespace AutomatedGreetingSystem.Application.Interfaces
+﻿using AutomatedGreetingSystem.Application.DTO;
+
+namespace AutomatedGreetingSystem.Application.Interfaces
 {
     public interface IGreetingService
     {
-        Task CheckAndSendGreet();
+        Task<List<EndPointCheckerDTO>> CheckAndSendGreet();
     }
 }
