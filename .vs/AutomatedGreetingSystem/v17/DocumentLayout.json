@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Projects\\AutomatedGreetingSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|e:\\projects\\automatedgreetingsystem\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|solutionrelative:controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|e:\\projects\\automatedgreetingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,6 +55,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ContactController.cs",
+              "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Controllers\\ContactController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ContactController.cs",
+              "ToolTip": "E:\\Projects\\AutomatedGreetingSystem\\Controllers\\ContactController.cs",
+              "RelativeToolTip": "Controllers\\ContactController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T10:36:51.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -63,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Dockerfile",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
@@ -71,12 +88,11 @@
               "RelativeToolTip": "Dockerfile",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-11T10:10:25.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T10:10:25.36Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IGreetingService.cs",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Interfaces\\IGreetingService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\IGreetingService.cs",
@@ -88,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GreetingService.cs",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Services\\GreetingService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\GreetingService.cs",
@@ -96,12 +112,11 @@
               "RelativeToolTip": "Application\\Services\\GreetingService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T09:50:52.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-10T09:50:52.905Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GreetingBackgroundService.cs",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Infrastructure\\BackgroundServices\\GreetingBackgroundService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\BackgroundServices\\GreetingBackgroundService.cs",
@@ -113,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TestServiceController.cs",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Controllers\\TestServiceController.cs",
               "RelativeDocumentMoniker": "Controllers\\TestServiceController.cs",

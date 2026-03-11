@@ -20,8 +20,11 @@ namespace AutomatedGreetingSystem.Controllers
         }
 
         [HttpPost("addcontact")]
-        public async Task<ActionResult> AddNewContact(CreateContactDTO contactDTO)
+        public async Task<ActionResult> AddNewContact([FromBody] CreateContactDTO contactDTO)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             Contacts contact = new Contacts
             {
                 Name = contactDTO.Name,
