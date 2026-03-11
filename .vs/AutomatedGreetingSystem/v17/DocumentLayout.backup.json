@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Projects\\AutomatedGreetingSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|e:\\projects\\automatedgreetingsystem\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|e:\\projects\\automatedgreetingsystem\\infrastructure\\backgroundservices\\greetingbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E44D35C9-A293-4A73-B780-6B6655FE5547}|AutomatedGreetingSystem.csproj|solutionrelative:infrastructure\\backgroundservices\\greetingbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,21 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1322,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IGreetingService.cs",
-              "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Interfaces\\IGreetingService.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IGreetingService.cs",
-              "ToolTip": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Interfaces\\IGreetingService.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IGreetingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T10:09:12.825Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -55,7 +46,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "E:\\Projects\\AutomatedGreetingSystem\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-11T10:10:25.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IGreetingService.cs",
+              "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Interfaces\\IGreetingService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IGreetingService.cs",
+              "ToolTip": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Interfaces\\IGreetingService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IGreetingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T10:09:12.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GreetingService.cs",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Application\\Services\\GreetingService.cs",
               "RelativeDocumentMoniker": "Application\\Services\\GreetingService.cs",
@@ -63,12 +79,11 @@
               "RelativeToolTip": "Application\\Services\\GreetingService.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAArwCkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T09:50:52.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-10T09:50:52.905Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GreetingBackgroundService.cs",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Infrastructure\\BackgroundServices\\GreetingBackgroundService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\BackgroundServices\\GreetingBackgroundService.cs",
@@ -81,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TestServiceController.cs",
               "DocumentMoniker": "E:\\Projects\\AutomatedGreetingSystem\\Controllers\\TestServiceController.cs",
               "RelativeDocumentMoniker": "Controllers\\TestServiceController.cs",
@@ -89,8 +104,7 @@
               "RelativeToolTip": "Controllers\\TestServiceController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T09:49:23.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-10T09:49:23.372Z"
             }
           ]
         },

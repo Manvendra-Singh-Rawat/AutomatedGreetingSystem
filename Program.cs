@@ -5,6 +5,7 @@ using AutomatedGreetingSystem.Infrastructure.Persistence.PostgreSQL;
 using AutomatedGreetingSystem.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,5 +39,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AutoGreetDbContext>();
+    db.Database.Migrate();
+}
 
 app.Run();
