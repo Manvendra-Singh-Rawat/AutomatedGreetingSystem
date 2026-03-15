@@ -15,7 +15,7 @@ namespace AutomatedGreetingSystem.Controllers
             _greetingService = greetingService;
         }
 
-        [HttpPost]
+        [HttpPost("test")]
         public async Task<IActionResult> ExecuteMailService()
         {
             if (_greetingService == null)
