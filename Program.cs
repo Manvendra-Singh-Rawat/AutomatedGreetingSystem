@@ -3,6 +3,7 @@ using AutomatedGreetingSystem.Application.Services;
 using AutomatedGreetingSystem.Infrastructure.GreetingService;
 using AutomatedGreetingSystem.Infrastructure.Persistence.PostgreSQL;
 using AutomatedGreetingSystem.Infrastructure.Repository;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -34,6 +35,11 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedProto
+});
 
 app.UseCors("AllowAll");
 
