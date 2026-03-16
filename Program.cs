@@ -5,7 +5,6 @@ using AutomatedGreetingSystem.Infrastructure.Persistence.PostgreSQL;
 using AutomatedGreetingSystem.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 

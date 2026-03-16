@@ -1,7 +1,5 @@
 ﻿using AutomatedGreetingSystem.Application.Interfaces;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace AutomatedGreetingSystem.Controllers
 {

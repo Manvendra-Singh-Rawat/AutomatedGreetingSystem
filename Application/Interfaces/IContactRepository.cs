@@ -1,5 +1,4 @@
 ﻿using AutomatedGreetingSystem.Domain.Entity;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AutomatedGreetingSystem.Application.Interfaces
 {
