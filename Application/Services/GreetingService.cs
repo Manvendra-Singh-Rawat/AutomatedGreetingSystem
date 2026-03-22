@@ -58,13 +58,16 @@ namespace AutomatedGreetingSystem.Application.Services
 
         private async Task<List<EndPointCheckerDTO>> SendMails(DateOnly todayDate, string mailBody, List<Contacts> contactsList)
         {
-            Console.WriteLine($"{_smtpSettings.Host}");
+            Console.WriteLine($"{_smtpSettings.Host} {_smtpSettings.Email}");
 
             var taskList = contactsList.Select(async contact =>
             {
+                Console.WriteLine("Starting a new client smtp");
                 using var smtp = new SmtpClient();
                 await smtp.ConnectAsync(_smtpSettings.Host, _smtpSettings.Port, SecureSocketOptions.StartTls);
+                Console.WriteLine("After connection");
                 await smtp.AuthenticateAsync(_smtpSettings.Email, _smtpSettings.Password);
+                Console.WriteLine("After auth sync");
 
                 var email = new MimeMessage();
                 email.From.Add(InternetAddress.Parse(_smtpSettings.Email));
@@ -75,9 +78,9 @@ namespace AutomatedGreetingSystem.Application.Services
                 Console.WriteLine($"Sent to: {contact.Name} \nAt Mail: {contact.Email}\n\n");
 
                 await smtp.SendAsync(email);
-
+                Console.WriteLine("After sending");
                 await smtp.DisconnectAsync(true);
-
+                Console.WriteLine("After disconnect");
                 return new EndPointCheckerDTO
                 {
                     name = contact.Name,
