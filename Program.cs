@@ -1,5 +1,6 @@
 using AutomatedGreetingSystem.Application.Interfaces;
 using AutomatedGreetingSystem.Application.Services;
+using AutomatedGreetingSystem.Infrastructure.Environment;
 using AutomatedGreetingSystem.Infrastructure.GreetingService;
 using AutomatedGreetingSystem.Infrastructure.Persistence.PostgreSQL;
 using AutomatedGreetingSystem.Infrastructure.Repository;
@@ -14,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.Configure<SMTPSettings>(builder.Configuration.GetSection("SMTP"));
 
 // postgres database connection
 builder.Services.AddDbContext<AutoGreetDbContext>(options =>

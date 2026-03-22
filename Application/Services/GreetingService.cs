@@ -1,8 +1,10 @@
 ﻿using AutomatedGreetingSystem.Application.DTO;
 using AutomatedGreetingSystem.Application.Interfaces;
 using AutomatedGreetingSystem.Domain.Entity;
+using AutomatedGreetingSystem.Infrastructure.Environment;
 using MailKit.Net.Smtp;
 using MailKit.Security;
+using Microsoft.Extensions.Options;
 using MimeKit;
 
 namespace AutomatedGreetingSystem.Application.Services
@@ -11,11 +13,13 @@ namespace AutomatedGreetingSystem.Application.Services
     {
         private readonly IContactRepository _contactRepo;
         private readonly IEventRepository _eventRepo;
+        private readonly SMTPSettings _smtpSettings;
 
-        public GreetingService(IContactRepository contactRepo, IEventRepository eventRepo)
+        public GreetingService(IContactRepository contactRepo, IEventRepository eventRepo, IOptions<SMTPSettings> smtpSettings)
         {
             _contactRepo = contactRepo;
             _eventRepo = eventRepo;
+            _smtpSettings = smtpSettings.Value;
         }
 
         public async Task<List<EndPointCheckerDTO>> CheckAndSendGreet()
@@ -54,14 +58,16 @@ namespace AutomatedGreetingSystem.Application.Services
 
         private async Task<List<EndPointCheckerDTO>> SendMails(DateOnly todayDate, string mailBody, List<Contacts> contactsList)
         {
+            Console.WriteLine($"{_smtpSettings.Host}");
+
             var taskList = contactsList.Select(async contact =>
             {
                 using var smtp = new SmtpClient();
-                await smtp.ConnectAsync("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
-                await smtp.AuthenticateAsync("amanda37@ethereal.email", "XM8Bq9FAtPNqP76rPm");
+                await smtp.ConnectAsync(_smtpSettings.Host, _smtpSettings.Port, SecureSocketOptions.StartTls);
+                await smtp.AuthenticateAsync(_smtpSettings.Email, _smtpSettings.Password);
 
                 var email = new MimeMessage();
-                email.From.Add(InternetAddress.Parse("amanda37@ethereal.email"));
+                email.From.Add(InternetAddress.Parse(_smtpSettings.Email));
                 email.To.Add(InternetAddress.Parse(contact.Email));
                 email.Subject = $"Event(s) on {todayDate}";
                 email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = mailBody };
