@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AutomatedGreetingSystem.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class EventController : ControllerBase
     {
         private readonly IEventRepository _eventRepository;
@@ -29,8 +29,7 @@ namespace AutomatedGreetingSystem.Controllers
         [HttpGet("getevent")]
         public async Task<ActionResult> GetAllEvents()
         {
-            await _eventRepository.GetAllEvents();
-            return Ok();
+            return Ok(await _eventRepository.GetAllEvents());
         }
 
         [HttpPut("updateevent")]

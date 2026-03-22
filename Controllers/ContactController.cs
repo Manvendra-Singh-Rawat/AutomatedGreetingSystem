@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AutomatedGreetingSystem.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ContactController : ControllerBase
     {
         private AutoGreetDbContext _context;

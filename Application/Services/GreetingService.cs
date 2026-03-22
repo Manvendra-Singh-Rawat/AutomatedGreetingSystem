@@ -29,6 +29,11 @@ namespace AutomatedGreetingSystem.Application.Services
                 Console.WriteLine($"No events on for the day");
                 return null;
             }
+            else
+            {
+                // Log
+                Console.WriteLine("Events for today are not null");
+            }
 
             var contactsList = await _contactRepo.GetAllContacts();
             if (contactsList.Count <= 0)
@@ -36,39 +41,48 @@ namespace AutomatedGreetingSystem.Application.Services
                 Console.WriteLine("Contacts list is empty");
                 return null;
             }
+            else
+            {
+                // Log
+                Console.WriteLine("Contacts list not null");
+            }
 
-            var sentList = await SendMails(contactsList, todayEvents);
-
-            return sentList;
+            string mailBody = GenerateEventMessage(todayEvents);
+            Console.WriteLine($"Mail body: {mailBody}");
+            return await SendMails(today, mailBody, contactsList);
         }
 
-        private async Task<List<EndPointCheckerDTO>> SendMails(List<Contacts> contactsList, List<Events> eventsList)
+        private async Task<List<EndPointCheckerDTO>> SendMails(DateOnly todayDate, string mailBody, List<Contacts> contactsList)
         {
-            using var smtp = new SmtpClient();
-            await smtp.ConnectAsync("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
-            await smtp.AuthenticateAsync("amanda37@ethereal.email", "XM8Bq9FAtPNqP76rPm");
-
-            List<EndPointCheckerDTO> sentList = new List<EndPointCheckerDTO>();
-
-            foreach ( var contact in contactsList)
+            var taskList = contactsList.Select(async contact =>
             {
+                using var smtp = new SmtpClient();
+                await smtp.ConnectAsync("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
+                await smtp.AuthenticateAsync("amanda37@ethereal.email", "XM8Bq9FAtPNqP76rPm");
+
                 var email = new MimeMessage();
                 email.From.Add(InternetAddress.Parse("amanda37@ethereal.email"));
                 email.To.Add(InternetAddress.Parse(contact.Email));
+                email.Subject = $"Event(s) on {todayDate}";
+                email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = mailBody };
 
-                foreach(var events in eventsList)
+                Console.WriteLine($"Sent to: {contact.Name} \nAt Mail: {contact.Email}\n\n");
+
+                await smtp.SendAsync(email);
+
+                await smtp.DisconnectAsync(true);
+
+                return new EndPointCheckerDTO
                 {
-                    email.Subject = "Event: " + events.EventName;
-                    email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = $"testing email for event {events.EventName}" };
-                    smtp.Send(email);
-                }
+                    name = contact.Name,
+                    email = contact.Email,
+                };
+            });
 
-                Console.WriteLine($"Mail sent to: {contact.Name} \nMail: {contact.Email}");
-                sentList.Add(new EndPointCheckerDTO() { name = contact.Name, email = contact.Email });
-            }
-
-            await smtp.DisconnectAsync(true);
-            return sentList;
+            var sendList = await Task.WhenAll(taskList);
+            return sendList.ToList();
         }
+
+        private string GenerateEventMessage(List<Events> eventsList) => string.Join("<br>", eventsList.Select(e => $"Event: {e.EventName}"));
     }
 }

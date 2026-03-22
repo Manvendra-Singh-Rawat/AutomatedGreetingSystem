@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AutomatedGreetingSystem.Controllers
 {
     [ApiController]
-    [Route("test/[controller]")]
+    [Route("[controller]")]
     public class TestServiceController : ControllerBase
     {
         private readonly IGreetingService _greetingService;
@@ -23,7 +23,7 @@ namespace AutomatedGreetingSystem.Controllers
 
             var list = await _greetingService.CheckAndSendGreet();
 
-            if(list == null || true)
+            if(list == null)
             {
                 return NoContent();
             }
