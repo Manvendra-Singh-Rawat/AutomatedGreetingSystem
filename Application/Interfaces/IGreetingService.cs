@@ -4,6 +4,6 @@ namespace AutomatedGreetingSystem.Application.Interfaces
 {
     public interface IGreetingService
     {
-        Task<List<EndPointCheckerDTO>> CheckAndSendGreet();
+        Task<List<EndPointCheckerDTO>> CheckAndSendGreet(string testEmail = "");
     }
 }

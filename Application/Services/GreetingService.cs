@@ -22,7 +22,7 @@ namespace AutomatedGreetingSystem.Application.Services
             _smtpSettings = smtpSettings.Value;
         }
 
-        public async Task<List<EndPointCheckerDTO>> CheckAndSendGreet()
+        public async Task<List<EndPointCheckerDTO>> CheckAndSendGreet(string testEmail = "")
         {
             var today = DateOnly.FromDateTime(DateTime.UtcNow);
             Console.WriteLine($"Todays date: {today}");
@@ -42,6 +42,15 @@ namespace AutomatedGreetingSystem.Application.Services
             }
 
             string mailBody = GenerateEventMessage(todayEvents);
+
+            if(testEmail.Length > 0)
+            {
+                contactsList.Add(new Contacts
+                {
+                    Name = "Testing User",
+                    Email = testEmail
+                });
+            }
 
             var newTask = Task.Run(async () => await SendMails(today, mailBody, contactsList));
 
@@ -72,13 +81,13 @@ namespace AutomatedGreetingSystem.Application.Services
                 email.Subject = $"Event(s) on {todayDate}";
                 email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = mailBody };
 
-                Console.WriteLine($"Sent to: {contact.Name} \nAt Mail: {contact.Email}\n\n");
-
                 await smtp.SendAsync(email);
-                Console.WriteLine("After sending");
-                await smtp.DisconnectAsync(true);
-                Console.WriteLine("After disconnect");
+                Console.WriteLine($"Sent to: {contact.Name} \nAt Mail: {contact.Email}\n");
             }
+            
+            await smtp.DisconnectAsync(true);
+            Console.WriteLine("Disconnected from SMTP Server");
+
             return;
         }
 

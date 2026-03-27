@@ -27,7 +27,23 @@ namespace AutomatedGreetingSystem.Controllers
             {
                 return NoContent();
             }
+            return Ok(list);
+        }
 
+        [HttpPost("customtest/{email}")]
+        public async Task<IActionResult> ExecuteMailService(string email)
+        {
+            if (_greetingService == null)
+            {
+                return StatusCode(500);
+            }
+
+            var list = await _greetingService.CheckAndSendGreet(email);
+
+            if (list == null)
+            {
+                return NoContent();
+            }
             return Ok(list);
         }
     }
